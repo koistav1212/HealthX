@@ -1,0 +1,45 @@
+@import "~@ng-select/ng-select/themes/default.theme.css";
+.header{
+    text-align: center;
+    height: 100%;
+}
+lottie-player{
+    margin: 10px auto;
+    width: 100px;height: 80px;
+  }
+  .body{
+    height: 100%;
+    width: 100%;
+    margin-top: 40%;
+    position: fixed;
+    color: black;
+    border-top-left-radius: 20px;
+    border-top-right-radius:20px;
+    background: white;
+    padding: 20px;
+  }
+  .cntBtn{
+    margin:20px auto;--color: white; position: fixed; bottom: 0; left: 0; width: 75%;right: 0;
+    border-radius: 22px;
+    height: 50px;
+  }
+  .cntBtn:disabled{
+    background: #1301014D;
+  }
+.radio_btn{
+    display: flex;
+    align-items: center;
+    margin-bottom: 18px;
+  }
+  
+  .radio_btn .radioItem{
+    flex: 1;
+    display: flex;
+      align-items: center;
+  }
+  
+  .radio_btn .radioItem ion-radio{
+    margin-right: 6px;
+    --color: #787878;
+    --color-checked: #ff0000;
+  }

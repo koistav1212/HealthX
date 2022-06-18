@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>blogView</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="mainContainer">
+<ion-title>{{item.title}}</ion-title>
+<img style="height:300px" src="{{item.imageurl}}"/>
+<p>{{item.body}}</p>
+<img style="height: 300px;" *ngIf="item.image1" src="{{item.image1}}"/>
+</div>
+</ion-content>

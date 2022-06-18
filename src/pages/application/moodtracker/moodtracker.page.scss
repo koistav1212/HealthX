@@ -1,0 +1,48 @@
+ion-icon{
+    color: black;
+    font-size: 25px;
+}
+.header{
+    text-align: center;
+    height: 100%;
+    background: url("../../../assets/images/GlobalBG1.svg") no-repeat top/cover !important;
+}
+.body{
+    height: 100%;
+    width: 100%;
+    margin-top: 40%;
+    position: fixed;
+    color: black;
+    border-top-left-radius: 20px;
+    border-top-right-radius:20px;
+    background: url("../../../assets/images/GlobalBG2.svg") no-repeat top/cover !important;
+    padding: 20px 0;
+  }
+  .imgConatiner{
+      display: flex;
+      flex-direction: row;
+  }
+  ion-card{
+      margin: 10px 0px 0;
+border-radius: 10px;
+background: white;
+padding: 10px;
+-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+-moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  }
+  .emotionCnt{
+      display: flex;
+      justify-content: space-around;
+  }
+  .emotion{
+     
+      padding: 10px;
+      color:white;
+      border-radius: 15px;
+  }
+  ion-list{
+      height: 100%;
+      padding: 10px;
+      background-color: transparent !important;
+  }

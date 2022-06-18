@@ -1,0 +1,38 @@
+<div [ngStyle]="{'background-color':currenColor}" class="header">
+    <lottie-player 
+    autoplay="true"
+    controls="false"
+    loop="true"
+    mode="normal"
+    src="{{currLottie}}"   >
+  </lottie-player> 
+<h2>{{currMood}}</h2>
+</div>
+
+<div class="body">
+  <h2 class="splash-h1">Tell us about your emotions...</h2>
+  <p>Pick up 4 emotions in total</p>
+
+  <p class="splash-h2">Positive Emotions</p>
+  <ng-select
+  [items]="positive"
+  bindLabel="name"
+  placeholder="Select Category"
+  appendTo="body"
+  multiple="true"
+  (change)="getChange()"
+  [(ngModel)]="selectedPos">
+</ng-select>
+
+<p class="splash-h2">Negative Emotions</p>
+<ng-select
+[items]="negative"
+bindLabel="name"
+placeholder="Select Category"
+appendTo="body"
+multiple="true"
+(change)="getChange()"
+[(ngModel)]="selectedNeg">
+</ng-select>
+<button  class="splash-h2 cntBtn" [disabled]="disabled" (click)="Continue()" fill="solid" [ngStyle]="{'background':disabled? '#1301014D':currenColor}" >Continue</button>
+</div>

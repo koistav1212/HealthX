@@ -1,0 +1,96 @@
+<ion-header>
+
+  <ion-toolbar [class]="toolbar">
+
+    <ion-buttons slot="start">
+      <ion-menu-button> <img class="header-img" src="../../../assets/images/panda-bear.png" /></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="header-title">Therapist</ion-title>
+    <ion-buttons slot="end">
+      <img class="notification-img" src="../../../assets/images/notification.svg">
+    </ion-buttons>
+  </ion-toolbar>
+  <div class="dates ion-text-center">
+    <ion-icon name="chevron-back-circle-outline"></ion-icon>
+    <p> Mon ,June 2021 </p>
+    <ion-icon name="chevron-forward-circle-outline"></ion-icon>
+  </div>
+  <ion-segment mode="ios" (ionChange)="segmentChanged($event)" value="journal">
+    <ion-segment-button value="journal">
+      <ion-label>journal</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="info">
+      <ion-label>info</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+</ion-header>
+<ion-content [scrollEvents]="true" (ionScroll)="Scroll($event)" #contents>
+  <div class="drawer" #drawer></div>
+
+  <p>Find a Therapist close to You</p>
+  <ion-searchbar *ngIf="!scrolledDown" class="searchBar" placeholder="Topic Name" [(ngModel)]="term"></ion-searchbar>
+
+  <p class="searchResult" *ngIf="term">Related Items </p>
+  <ion-list style="margin-bottom: 10%;">
+
+    <div class="listItems" *ngFor="let item of arr | async| filter:term">
+
+      <ion-card class="therapist" *ngIf="!term">
+        <div style="display: flex;flex-direction: column;margin-left: 5px;">
+          <img style="width: 120px !important;height: 120px;" src="{{item.imageurl}}">
+          <div style="display: flex;flex-direction: row; margin:2px 10px;">
+            <ion-icon name="star" *ngIf="item.rating > 0"></ion-icon>
+            <ion-icon name="star" *ngIf="item.rating > 1"></ion-icon>
+            <ion-icon name="star" *ngIf="item.rating > 2"></ion-icon>
+            <ion-icon name="star" *ngIf="item.rating > 3"></ion-icon>
+            <ion-icon name="star" *ngIf="item.rating > 4"></ion-icon>
+          </div>
+        </div>
+        <div style="display: flex;flex-direction: column; margin: 0 5px; width:90%;height: 100%;">
+          <p style="color: #424141;" class="ion-text-start">{{item.name}}</p>
+          <p style="max-lines: 1;">Qualifications :<span style="max-lines: 1;">{{item.qualifications}}</span></p>
+          <p>Starting At : Rs.<span>{{item.fees}}</span></p>
+
+          <div style="display: flex;flex-direction: row; margin: 0 20px; position: absolute; bottom: 0;">
+
+            <ion-button shape="round" class="splash-h3" fill="outline" (click)="moreModal(item)" style=" --padding-start: 10px;--padding-end:10px;			--border-color:#5EBB83;			--color:#5EBB83;			margin: 5px;			font-size: 12px;">KNOW MORE</ion-button>
+            <ion-button shape="round" class="splash-h3" fill="solid" (click)="bookModal(item)"
+              style="margin:5px 0;--background: #5EBB83;--color: white;">
+              BOOK</ion-button>
+          </div>
+        </div>
+      </ion-card>
+
+
+    </div>
+  </ion-list>
+
+</ion-content>
+<ion-footer>
+</ion-footer>
+<div class="overlay" padding *ngIf="bookBtn">
+  <div class="h-100 d-flex justify-content-center align-items-center">
+    <ion-card class="deletePop" *ngIf="bookBtn">
+      <p class="splash-h1">Book appointment with {{currentDoctor.name}}</p>
+      <p class="splash-h2">Pay Rs.{{currentDoctor.fees}} and proceed</p>
+    <img style="width: 120px !important;height: 120px;" src="{{currentDoctor.imageurl}}"/>
+      <ion-button shape="round" (click)="book()"
+        style="--background: #5EBB83; margin-top: 10px; height: 40px;width: 200px;font-size: 20px;">Yes</ion-button>
+      <ion-button shape="round" (click)="bookModal()"
+        style="--background: #5EBB83; margin-top: 10px; height: 40px;width: 200px;font-size: 20px;">Cancel</ion-button>
+    </ion-card>
+  </div>
+
+</div>
+<div class="overlay" padding *ngIf="moreBtn">
+  <div class="h-100 d-flex justify-content-center align-items-center">
+    <ion-card class="deletePop" *ngIf="moreBtn">
+      <ion-icon class="closeBtn" name="close-outline" (click)="moreModal()"></ion-icon>
+      <p class="splash-h1">{{currentDoctor.name}}</p>
+      <p class="splash-h2">{{currentDoctor.qualifications}}</p>
+    <img style="width: 120px !important;height: 120px;" src="{{currentDoctor.imageurl}}"/>
+      <p>{{currentDoctor.description}}</p>   
+  </ion-card>
+  </div>
+
+</div>

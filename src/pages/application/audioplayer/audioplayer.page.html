@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>audioplayer</ion-title>
+ 
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="text-align: center;">
+<img style="width: 90%;height: 50%; margin:auto" src="{{audioList[0].cover}}"/>
+ <div style="  display: flex;flex-direction: row;  text-align: left;width: 90%;margin: 10px auto;"> <ion-icon style="font-size: 50px;" name="musical-notes-outline"></ion-icon> <h2 >Related Music</h2>
+ </div>
+<ion-list style="margin-bottom: 130px;">
+  <div class="listItems" *ngFor="let item of arr | async">
+
+    <ion-card class="cardItem" *ngIf="!term">
+      <div style="display: flex;flex-direction: column;margin-left: 5px;">
+        <img style="width: 120px !important;height: 120px;  border-radius: 50%; margin: auto;" src="{{item.imageurl}}">
+        
+      </div>
+      <div style="display: flex;flex-direction: column; margin: 0 5px; width:90%;height: 100%;">
+        <p style="color: #424141;" class="ion-text-start">{{item.name}}</p>
+        <p style="max-lines: 1;">Qualifications :<span style="max-lines: 1;">{{item.qualifications}}</span></p>
+        <p>Starting At : Rs.<span>{{item.fees}}</span></p>
+
+        <div style="display: flex;flex-direction: row; margin: 0 20px; position: absolute; bottom: 0;">
+
+          <ion-button shape="round" class="splash-h3" fill="outline" (click)="moreModal(item)" style=" --padding-start: 10px;--padding-end:10px;			--border-color:#5EBB83;			--color:#5EBB83;			margin: 5px;			font-size: 12px;">KNOW MORE</ion-button>
+          <ion-button shape="round" class="splash-h3" fill="solid" (click)="bookModal(item)"
+            style="margin:5px 0;--background: #5EBB83;--color: white;">
+            BOOK</ion-button>
+        </div>
+      </div>
+    </ion-card>
+
+
+  </div>
+</ion-list>
+  <ang-music-player style="  width: 100%; bottom: 0;  position: fixed; left: 0;" width="100%" playButtonColor="#fff"
+  nextButtonColor="rgb(76, 130, 175)"
+  pauseButtonColor="rgb(76, 130, 175)"
+  previousButtonColor="rgb(76, 130, 175)"
+  [audioList] = audioList></ang-music-player>
+ </ion-content>

@@ -1,0 +1,79 @@
+ion-header {
+    background: url(../../../assets/images/CommunityBG1.svg) no-repeat top/cover;
+    height: 100%;
+    z-index: 0;
+}
+
+ion-toolbar {
+    --background: transparent;
+    margin: 18px 0px;
+    transition: margin 200ms ease-in-out;
+}
+
+ion-content {
+    --background: url(../../../assets/images/CommunityBG2.svg) no-repeat top/cover !important;
+    position: absolute;
+    top: 15%;
+    height: 92%;
+    transition: top 250ms ease-in-out;
+    --padding-bottom: 70px
+}
+
+.shrink {
+    margin: 0;
+    transition: margin 200ms ease-in-out;
+}
+
+.contentShrink {
+    transform: translateY(-7%);
+    transition: transform 250ms ease-in-out;
+}
+
+.dates {
+    display: flex;
+    flex-direction: row;
+    margin: 100px auto 20px;
+    color: white;
+    width: 80%;
+    justify-content: space-between;
+}
+
+.drawer {
+    width: 80px;
+    height: 2px;
+    margin: 10px auto;
+    background: black;
+}
+
+ion-button {
+    display: flex;
+    text-transform: none;
+}
+
+.div-post {
+    margin: 10px;
+    color: #A7A7A7 !important;
+}ion-card{
+    --background: white;
+    border-radius: 20px;
+}
+
+ion-card-title {
+    font-size: 14px;
+    color: black;
+}
+
+ion-card-subtitle {
+    font-size: 10px;
+    margin-top: 3px;
+}
+
+ion-card-content {
+    font-size: 12px;
+}
+
+img {
+    border-radius: 50%;
+    height: 2em;
+    margin: 3px 5px 3px 0px;
+}

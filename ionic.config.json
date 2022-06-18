@@ -1,0 +1,8 @@
+{
+  "name": "HealtX",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
+  "type": "angular"
+}

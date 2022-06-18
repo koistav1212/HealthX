@@ -1,0 +1,46 @@
+<ion-content >
+ 
+	<img src="../../../assets/images/Group 9.svg" style="position: fixed; width: 100%; "/>
+  <div class="container" >
+	<h2 >YouMatter</h2>
+ <p class="splash-h1" style="color: #969696; margin-top: 20%;font-weight: 800;">Register</p>
+ <ion-list>
+ <ion-item lines="none" style="   --border-color:#969696;
+ --border-radius:10px;
+ --border-width:1px;
+ margin: 5px 10px;">
+		
+			<ion-label  style="--color: #969696;" position="floating">Username</ion-label>
+			<ion-input type="text" [(ngModel)]="username"></ion-input>
+		  </ion-item>
+		  <ion-item lines="none" style="   --border-color:#969696;
+		  --border-radius:10px;
+		  --border-width:1px;
+		  margin: 5px 10px;">
+			<ion-label style="--color: #969696;" position="floating">Email</ion-label>
+			<ion-input type="email" [(ngModel)]="email"></ion-input>
+		  </ion-item>
+		
+		  <ion-item lines="none" style="   --border-color:#969696;
+		  --border-radius:10px;
+		  --border-width:1px;
+		  margin: 5px 10px;">
+			<ion-label style="--color: #969696;" position="floating">Password</ion-label>
+			<ion-input type="password" [(ngModel)]="password" minlength="6"></ion-input>
+		  </ion-item>
+
+		  <ion-item lines="none" style="   --border-color:#969696;
+		  --border-radius:10px;
+		  --border-width:1px;
+		  margin: 5px 10px;">
+			<ion-label style="--color: #969696;" position="floating">Confirm Password</ion-label>
+			<ion-input type="password" [(ngModel)]="cpassword" minlength="6"></ion-input>
+		  </ion-item>
+		
+		</ion-list>
+		<button (click)="register()">
+			Register
+		  </button>
+  </div>
+  
+  </ion-content>

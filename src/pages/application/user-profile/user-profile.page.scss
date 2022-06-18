@@ -1,0 +1,100 @@
+
+ion-icon{
+    color: black;
+    font-size: 25px;
+}
+.header{
+    text-align: center;
+    height: 100%;
+    background-color: #8ABCE1;
+}
+.knowCard
+{ width: 120px !important;
+    height: 140px;
+    border-radius: 10px;
+    background:  center/cover;
+    text-align: center;
+    p{
+      color:white;
+      position:absolute;
+      bottom: 10px;
+      left: 5px;
+      margin: 0 auto;
+      font-weight: 600;
+    }
+   
+}
+.body{
+    height: 100%;
+    width: 100%;
+    margin-top: 40%;
+    position: fixed;
+    color: black;
+    border-top-left-radius: 20px;
+    border-top-right-radius:20px;
+    background: white;
+    padding: 20px;
+  }
+.userContainer{   
+     height: 180px;
+    text-align: center;
+    display: flex;
+    top: -7%;
+    margin: auto;
+    position: absolute;
+    left: 30%;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    background: transparent;
+    padding-bottom: 12px;
+}
+.imgContainer{
+    position: relative;
+    border-radius: 30%;
+}
+.imgContainer ion-icon{
+    position: absolute;
+    bottom: 9px;
+    right: 0;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #787878;
+    background: #fff;
+    box-shadow: 2px 4px 16px 6px rgb(178 178 178 / 50%);
+}
+
+.userImg{
+    height: 150px;
+    width: 150px;
+    border: 2px solid rgba(255, 255, 255, 1);
+    object-fit: cover;
+    border-radius: 50%;
+}
+h2{
+    margin: 10px;
+}
+p{
+    margin: 5px;
+}
+ion-card{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    background: #7b00ff;
+}
+.planDetails div{
+    display: flex;
+    flex-direction: row;
+}
+.myplan{
+    margin-top: 30%;
+}

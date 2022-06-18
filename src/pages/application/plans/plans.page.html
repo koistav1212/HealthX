@@ -1,0 +1,28 @@
+<ion-header style="--background-color:#8ABCE1">
+
+  <ion-toolbar class="toolbar" style="background-color: #8ABCE1">
+
+      <ion-buttons slot="start">
+          <ion-menu-button> <img class="header-img" src="../../../assets/images/panda-bear.png" /></ion-menu-button>
+      </ion-buttons>
+      <ion-title class="header-title">Go Premium</ion-title>
+      <ion-buttons slot="end">
+          <img class="notification-img" src="../../../assets/images/notification.svg">
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <h2 style="margin: 10px;">Choose Your Plan for Your Happy Life</h2>
+  <ion-slides [options]="slideOpts3">
+    <ion-slide *ngFor="let item of slidesData2;">
+        <ion-card class="knowCard" style="background:url({{item.image}})  center/cover;" (click)="blogView(item)">
+
+            <p class="ion-text-center">{{item.title}}</p>
+
+        </ion-card>
+    </ion-slide>
+</ion-slides>
+<button  class="splash-h2 cntBtn" [disabled]="disabled" (click)="Continue()" fill="solid"  >Continue</button>
+
+</ion-content>

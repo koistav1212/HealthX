@@ -1,0 +1,59 @@
+.active-item{
+    border-left:8px solid var( --ion-color-primary);
+}
+ion-split-pane,ion-list,ion-item,ion-menu-toggle {
+    --ion-background-color:whitesmoke;
+    padding: 0 !important;
+}
+
+ion-header div img{
+    background-color: aqua;
+  width: fit-content;
+    height: 100px;
+}
+i{
+    font-size: 16px;
+    color: #ff0000;   
+     width: 26px;
+}
+
+i:focus-visible{
+    outline: none;
+}
+
+.userContainer{
+    height: 200px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    background: white;
+    padding-bottom: 12px;
+}
+.imgContainer{
+    position: relative;
+    border-radius: 30%;
+}
+.imgContainer i{
+    position: absolute;
+    bottom: 9px;
+    right: 0;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #787878;
+    background: #fff;
+    box-shadow: 2px 4px 16px 6px rgb(178 178 178 / 50%);
+}
+
+.userImg{
+    height: 100px;
+    width: 100px;
+    border: 2px solid rgba(255, 255, 255, 1);
+    object-fit: cover;
+    border-radius: 50%;
+}

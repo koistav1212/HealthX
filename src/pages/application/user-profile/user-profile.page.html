@@ -1,0 +1,45 @@
+<div class="header-title">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button> <img class="header-img" src="../../../assets/images/panda-bear.png" /></ion-menu-button>
+  </ion-buttons>
+    <ion-title>My Profile</ion-title>
+
+  </ion-toolbar>
+</div>
+<div class="body">
+  <div routerDirection="root" class="userContainer" lines='none'>
+    <div>
+      <div class="imgContainer">
+
+        <ion-icon name="caret-up-circle-outline"></ion-icon>
+        <img src="../../../assets/images/panda-bear.png" class="userImg" />
+      </div>
+      <p style="color: #f65a5a;font-size: 20px;margin-top: 12px;margin-bottom: 0;">userData.name</p>
+    </div>
+  </div>
+  <div class="myplan">
+    <div style="display: flex;justify-content: space-between;">
+      <h2 class="splash-h2">My Plan</h2>
+      <p (click)="navPlans()" class="ion-text-end">View All
+        <ion-icon name="chevron-forward-circle-outline"></ion-icon>
+      </p>
+    </div>
+    <ion-card>
+      <img src="../../../assets/images/panda-bear.png" style="height: 100px;" />
+      <div class="planDetails" style="display: flex;flex-direction:column">
+        <h2>Diamond Member</h2>
+        <p>Plan Benfits :</p>
+        <div>
+          <p>24*7 support </p>
+          <p>1 Free Weekly Checkup</p>
+        </div>
+        <div>
+          <p>Plan Duration :</p>
+          <p>3 Months</p>
+        </div>
+      </div>
+    </ion-card>
+  </div>
+  
+</div>

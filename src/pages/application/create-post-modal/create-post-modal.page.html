@@ -1,0 +1,42 @@
+<ion-header>
+
+    <ion-toolbar [class]="toolbar">
+
+        <ion-buttons slot="start">
+            <ion-menu-button > <img class="header-img" src="../../../assets/images/panda-bear.png"/></ion-menu-button>
+        </ion-buttons>
+        <ion-title class="header-title" >Community</ion-title>
+        <ion-buttons slot="end">
+    <img  class="notification-img" src="../../../assets/images/notification.svg">
+</ion-buttons>
+    </ion-toolbar>
+    <div class="dates ion-text-center">
+        <ion-icon name="chevron-back-circle-outline"></ion-icon>
+        <p> Mon ,June 2021 </p>
+        <ion-icon name="chevron-forward-circle-outline"></ion-icon>
+    </div>
+    <ion-segment mode="ios" (ionChange)="segmentChanged($event)" value="journal">
+        <ion-segment-button value="journal">
+            <ion-label>journal</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="info">
+            <ion-label>info</ion-label>
+        </ion-segment-button>
+    </ion-segment>
+</ion-header>
+<ion-content [scrollEvents]="true" (ionScroll)="Scroll($event)" #contents>
+    <div class="drawer" #drawer></div>
+    <div style="display: flex; flex-direction: column; height: 70%;">
+        <ion-input placeholder="Add a title" type="text" style="flex-grow: 1;" [(ngModel)]="title"></ion-input>
+        <ion-textarea placeholder="Tell us more..." style="flex-grow: 5;" [(ngModel)]="body"></ion-textarea>
+    </div>
+    <!-- <ion-checkbox class="checkbox-square" style="color: black;">Post as anonymous</ion-checkbox> -->
+    <div style="width: 100%; display: flex; flex-direction: row; justify-content: flex-start;margin-top: 25px;">
+        <ion-button class="button-cancel" style="flex-grow: 1;" (click)=" _dismiss() ">
+            Cancel
+        </ion-button>
+        <ion-button class="button-post" style="flex-grow: 1;" (click)="createPost()">
+            Post
+        </ion-button>
+    </div>
+</ion-content>

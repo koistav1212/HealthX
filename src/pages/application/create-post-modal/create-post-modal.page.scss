@@ -1,0 +1,65 @@
+ion-header {
+    background: url(../../../assets/images/CommunityBG1.svg) no-repeat top/cover;
+    height: 100%;
+    z-index: 0;
+}
+
+ion-toolbar {
+    --background: transparent;
+    margin: 18px 0px;
+    transition: margin 200ms ease-in-out;
+}
+
+ion-content {
+    --background: url(../../../assets/images/CommunityBG2.svg) no-repeat top/cover !important;
+    position: absolute;
+    top: 15%;
+    height: 92%;
+    transition: top 250ms ease-in-out;
+    --padding-bottom: 70px
+}
+
+.shrink {
+    margin: 0;
+    transition: margin 200ms ease-in-out;
+}
+
+.contentShrink {
+    transform: translateY(-7%);
+    transition: transform 250ms ease-in-out;
+}
+
+.dates {
+    display: flex;
+    flex-direction: row;
+    margin: 100px auto 20px;
+    color: white;
+    width: 80%;
+    justify-content: space-between;
+}
+
+.drawer {
+    width: 80px;
+    height: 2px;
+    margin: 10px auto;
+    background: black;
+}
+
+ion-input,
+ion-textarea {
+    border: 2px solid #848484;
+    border-radius: 10px !important;
+    color: #AFAFAF;
+    font-family: PTSans-Bold;
+    font-size: 16px;
+    padding-left: 15px !important;
+    padding-right: 15px;
+    width: 92%;
+    margin: 25px 15px 5px;
+}
+
+.button-cancel {
+    margin: 10px;
+    --background: #AFAFAF;
+    color: white;
+}

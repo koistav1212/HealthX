@@ -1,0 +1,31 @@
+<ion-split-pane contentId="content">
+  <ion-menu contentId="content" type="overlay">
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle autoHide="false">
+          <div routerDirection="root" class="userContainer" lines='none'>
+            <div>
+              <div class="imgContainer">
+
+                <i routerLink="/menu/userprofile" class="fa fa-pencil"></i>
+                <img src="../../../assets/images/panda-bear.png" class="userImg" />
+              </div>
+              <p style="color: #f65a5a;font-size: 20px;margin-top: 12px;margin-bottom: 0;">userData.name</p>
+            </div>
+          </div>
+        </ion-menu-toggle>
+        <ion-menu-toggle autoHide="false" *ngFor="let p of pages">
+          <ion-item [routerLink]="p.url" routerDirection="root" [class.active-item]="selectedPath.startsWith(p.url)">
+            <ion-label>
+              {{p.title}}
+            </ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-item tappable (click)="logout()">
+          <ion-icon name="log-out" slot="start"></ion-icon> Logout
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="content" main></ion-router-outlet>
+</ion-split-pane>

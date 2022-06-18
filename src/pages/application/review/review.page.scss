@@ -1,0 +1,53 @@
+ion-icon{
+    color: black;
+    font-size: 25px;
+}
+ion-header {
+    background: url(../../../assets/images/GlobalBG1.svg) no-repeat top/cover;
+    height: 100%;
+    z-index: 0;
+  }
+  
+  ion-toolbar {
+    --background: transparent;
+    margin: 18px 0px;  
+    transition: margin 200ms ease;
+  }
+.header{
+    text-align: center;
+    height: 100%;
+    background: url("../../../assets/images/GlobalBG1.svg") no-repeat top/cover !important;
+}
+.body{
+    height: 100%;
+    width: 100%;
+    margin-top: 40%;
+    position: fixed;
+    color: black;
+    border-top-left-radius: 20px;
+    border-top-right-radius:20px;
+  
+    padding: 20px;
+    background: url("../../../assets/images/GlobalBG2.svg") no-repeat top/cover !important;
+  }
+  ion-content {
+    --background: url(../../../assets/images/GlobalBG2.svg) no-repeat top/cover !important;
+    position: absolute;
+    top: 15%;
+    height: 92%;
+    transition: top 250ms ease-in-out;
+    --padding-bottom: 70px; 
+    border-radius: 20px;
+  }
+  .imgConatiner{
+      display: flex;
+      flex-direction: row;
+  }
+  ion-card{
+      margin: 10px 10px 0;
+border-radius: 10px;
+padding: 10px;
+-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+-moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  }

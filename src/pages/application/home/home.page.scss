@@ -1,0 +1,251 @@
+ion-header {
+  background: url(../../../assets/images/homeBG1.svg) no-repeat top/cover;
+  height: 100%;
+  z-index: 0;
+}
+
+ion-toolbar {
+  --background: transparent;
+  margin: 18px 0px;  
+  transition: margin 200ms ease;
+}
+
+ion-content {
+  --background: url(../../../assets/images/homeBG2.svg) no-repeat top/cover !important;
+  position: absolute;
+  top: 15%;
+  height: 92%;
+  transition: top 250ms ease-in-out;
+  --padding-bottom: 70px; 
+  border-radius: 20px;
+}
+
+.shrink {
+  margin: 0;
+  transition: margin 250ms ease-in-out;
+}
+
+.contentShrink {
+  transform: translateY(-7%);
+  transition: transform 250ms ease-in-out;
+}
+
+.dates {
+  display: flex;
+  flex-direction: row;
+  margin: 100px auto 20px;
+  color: white;
+  width: 80%;
+  justify-content: space-between;
+}
+
+.drawer {
+  width: 80px;
+  height: 2px;
+  margin: 10px auto; 
+  background: black;
+}
+   .scene {
+    width: 100%;
+    margin:10px;  
+    perspective: 600px;
+    position: relative;
+  }
+  .flip-container{
+    height: 30vh;
+  }
+  .card {
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+  }
+ 
+  .card.is-flipped {
+    transform: rotateY(180deg);
+  }
+  .shrink {
+    margin: 0;
+    
+  }
+  
+  .FeaturesCard
+  { width: 300px !important;
+      height: 140px;
+      --background: white;
+      border-radius: 10px;
+      img,lottie-player{        
+        width: 100%;
+        height: 94px;
+      
+      }
+     p{
+      position: absolute; 
+      left: 0; 
+      right: 0; 
+      margin-left: auto; 
+      margin-right: auto; 
+      bottom: 5px;
+     }
+  }
+  .feedCard{
+    width: 300px !important;
+      height: auto;
+      padding: 5px 10px;
+      border-radius: 10px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      img{
+        padding: auto;
+        width: 94px;
+        height: 94px;
+        margin: 10px;
+      }
+     .comma1,.comma2{
+      width: 10px;
+      height:10px;
+      }
+      p{
+        
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+      }
+      h3,h4{
+        color: #DAB430;
+        margin: 0;
+      }
+      h3{
+        font-size: 15px;
+      }
+      h4{
+        font-size: 14px;
+      }
+  }
+  
+  .knowCard
+  { width: 120px !important;
+      height: 140px;
+      border-radius: 10px;
+      background:  center/cover;
+      text-align: center;
+      p{
+        color:white;
+        position:absolute;
+        bottom: 10px;
+        left: 5px;
+        margin: 0 auto;
+        font-weight: 600;
+      }
+     
+  }
+  .moodTracker{
+     width: 100%;
+    margin: 0px;
+    height: 100%;    
+    background: whitesmoke;
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;  
+    h2{
+      font-size: 18px;
+      font-weight: 600;
+      color: gray;
+    }
+    p{
+      font-size: 12px;
+      color: red;
+      font-weight: 600;
+      margin-top: 0;
+    }
+  }
+  .details{
+    width: 95%;
+    color: #8E8E8E;
+    display: flex;
+    font-style: bold;
+    font-size: 18px;
+    margin: 0 auto 10px;
+    flex-direction: row;justify-content: space-between;
+    p{
+      
+      margin: 0;
+      height: 100%;
+      font-weight: 600;
+    }
+  }
+  .SuggestedCard{
+    width: 300px !important;
+      height: 140px;
+      border-radius: 10px;
+      background:  center/cover;
+      text-align: center;
+      p{
+        color:white;
+        position:absolute;
+        bottom: 10px;
+        left: 10px;
+        margin: 0 auto;
+        font-weight: 600;
+      }
+  }
+
+  .flip-container {
+    perspective: 1000px;
+}
+
+    /* flip the pane when hovered */
+    .flip-container.flipped .flipper {
+        transform: rotateY(180deg);
+    }
+
+.flip-container, .front, .back {
+    width: 90vw;
+    height: 20vh;
+    margin: 20px auto;
+}
+
+/* flip speed goes here */
+.flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+
+    position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    margin: 0;
+    position: absolute;
+    top: 0;
+    padding: 0;
+    left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+    z-index: 2;
+    /* for firefox 31 */
+    transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+    transform: rotateY(180deg);
+}
+
+

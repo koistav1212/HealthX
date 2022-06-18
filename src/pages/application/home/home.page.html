@@ -1,0 +1,139 @@
+<ion-header>
+
+    <ion-toolbar [class]="toolbar">
+
+        <ion-buttons slot="start">
+            <ion-menu-button> <img class="header-img" src="../../../assets/images/panda-bear.png" /></ion-menu-button>
+        </ion-buttons>
+        <ion-title class="header-title">Home</ion-title>
+        <ion-buttons slot="end">
+            <img class="notification-img" src="../../../assets/images/notification.svg">
+        </ion-buttons>
+    </ion-toolbar>
+    <div class="dates ion-text-center">
+        <ion-icon name="chevron-back-circle-outline"></ion-icon>
+        <p> Mon ,June 2021 </p>
+        <ion-icon name="chevron-forward-circle-outline"></ion-icon>
+    </div>
+    <ion-segment mode="ios" (ionChange)="segmentChanged($event)" value="journal">
+        <ion-segment-button value="journal">
+            <ion-label>journal</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="info">
+            <ion-label>info</ion-label>
+        </ion-segment-button>
+    </ion-segment>
+</ion-header>
+<ion-content [scrollEvents]="true" (ionScroll)="Scroll($event)" #contents>
+    <div class="drawer" #drawer></div>
+
+    <div style="overflow-y: hidden; ">
+        <div class="flip-container" [class.flipped]="flipped">
+
+            <div class="flipper">
+
+                <div class="front" (click)="flip('')">
+                    <div class="flash-card-front">
+
+                        <div class="moodTracker card__face--front">
+                            <img src="../../../assets/images/moodtracker.png" />
+                            <div style="display: flex;flex-direction: column;">
+                                <h2>MY MOOD TODAY</h2>
+                                <p>Friday ,18 June</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="back">
+                    <div class="moodTracker card__face--front" style="display: flex;flex-direction:column;background: white;">
+                        <h2 style="margin: 4px auto;">Choose your mood today</h2>
+                        <img src="../../../assets/images/moods2.jpg" style="height: 80px;"/>
+                        <div
+                            style="display: flex;flex-direction: row; width: 90%;justify-content: space-between;margin: auto;">
+                            <p (click)="flip('energetic')">Energetic</p>
+                            <p (click)="flip('happy')">Happy</p>
+                            <p (click)="flip('mild')">Mild</p>
+                            <p (click)="flip('disappointed')">Disappointed</p>
+                            <p (click)="flip('angry')">Angry</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+       
+
+        <div class="details">
+            <p class="ion-text-start">Featured</p>
+            <p (click)="hello()" class="ion-text-end">View All
+                <ion-icon name="chevron-forward-circle-outline"></ion-icon>
+            </p>
+        </div>
+        <ion-slides [options]="slideOpts" #slides (ionSlideTransitionEnd)="slideChanged(slides)">
+            <ion-slide *ngFor="let item of featuresData | async;let i = index;" (click)="featureNav(item)">
+                <ion-card class="FeaturesCard">
+
+                    <img src="{{item.imageurl}}" />
+
+                    <p class="ion-text-center">{{item.imagename}}</p>
+
+                </ion-card>
+            </ion-slide>
+        </ion-slides>
+        <div class="details">
+            <p class="ion-text-start">Suggested</p>
+            <p class="ion-text-end" [routerLink]="['../../suggestions']">View All
+                <ion-icon name="chevron-forward-circle-outline"></ion-icon>
+            </p>
+        </div>
+        <ion-slides [options]="slideOpts2">
+            <ion-slide *ngFor="let item of slidesData2;" (click)="blogView(item)">
+                <ion-card class="SuggestedCard" style="background:url({{item.image}})  center/cover;">
+
+                    <p class="ion-text-center">{{item.title}}</p>
+
+                </ion-card>
+            </ion-slide>
+        </ion-slides>
+
+        <div class="details">
+            <p class="ion-text-start">Did you Know?</p>
+            <p class="ion-text-end" [routerLink]="['../../fact-page']">View All
+                <ion-icon name="chevron-forward-circle-outline"></ion-icon>
+            </p>
+        </div>
+        <ion-slides [options]="slideOpts3">
+            <ion-slide *ngFor="let item of slidesData2;">
+                <ion-card class="knowCard" style="background:url({{item.image}})  center/cover;" (click)="blogView(item)">
+
+                    <p class="ion-text-center">{{item.title}}</p>
+
+                </ion-card>
+            </ion-slide>
+        </ion-slides>
+
+        <div class="details">
+            <p class="ion-text-start">Read Stories of our champs</p>
+            <p class="ion-text-end" [routerLink]="['../../testimonials']">View All
+                <ion-icon name="chevron-forward-circle-outline"></ion-icon>
+            </p>
+        </div>
+        <ion-slides [options]="slideOpts4">
+            <ion-slide *ngFor="let item of slidesData3;" (click)="reviewView(item)">
+                <ion-card class="feedCard" style="background:white;">
+                    <img src={{item.image}} />
+                    <div style="display: flex; flex-direction: row;">
+                        <img class="comma1" src="../../../assets/images/openComma.png" />
+                        <p class="ion-text-center">{{item.description}}
+                        </p>
+                        <img class="comma2" src="../../../assets/images/closeComma.png" />
+                    </div>
+                    <h3 class="ion-text-start">{{item.title}}</h3>
+                    <h4 class="ion-text-start">{{item.designation}}</h4>
+                </ion-card>
+            </ion-slide>
+        </ion-slides>
+    </div>
+</ion-content>

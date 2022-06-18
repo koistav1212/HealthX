@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "204973711311",
+    "firebase_url": "https://ioniclogin-318712-default-rtdb.firebaseio.com",
+    "project_id": "ioniclogin-318712",
+    "storage_bucket": "ioniclogin-318712.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:204973711311:android:584fe7455463fc91ae3cba",
+        "android_client_info": {
+          "package_name": "com.youmatterapp.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "204973711311-tb1uuj9dqaejnv3vuurs1ricgv2u2a2q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.youmatterapp.app",
+            "certificate_hash": "f82986dd2c60572c2b1265dd7d6745d360346ba3"
+          }
+        },
+        {
+          "client_id": "204973711311-q8i9ebhurl9gf1f7nnrr9m7avo91m63c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBR9Ir5ev4JM5rKbbrukPlMTg58WQ0J07c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "204973711311-55allobadeai7vi6slvk25u61si7c0s0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,76 @@
+
+<ion-tabs #tabs (ionTabsDidChange)="setCurrentTab()">  
+    <ion-tab-bar slot="bottom" class="ion-no-border">
+      <ion-tab-button tab="home" class="home tabButton" mode='ios'>
+        <ion-item #home lines="none" >
+          <ion-button fill="clear" #homeSVG> <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+          <defs>
+                <style>.cls-1{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:12px;}</style>
+            </defs>
+            <path #svg class="cls-1" d="M194.64,223.83c-9,.43-18.79.1-22.74,0a11.78,11.78,0,0,1-5.24-1.28c-3.55-1.83-8.59-6.18-8.59-16.19V174.27a40.84,40.84,0,0,0-2.29-13.73c-3.17-8.88-10.54-20.71-27.28-20.71s-24.11,11.83-27.28,20.71a40.84,40.84,0,0,0-2.29,13.73V206.4c0,10-5,14.36-8.59,16.19a11.78,11.78,0,0,1-5.24,1.28c-3.95.06-13.7.39-22.74,0-12-.57-11.43-13.71-11.43-13.71v-82c0-8.68,6.1-14.71,8-16.39.46-.4.9-.81,1.34-1.24,6.71-6.64,54.86-54.26,61.51-60.37a9.19,9.19,0,0,1,13.42,0c6.65,6.11,54.8,53.73,61.51,60.37.44.43.88.84,1.34,1.24,1.91,1.68,8,7.71,8,16.39v82S206.68,223.26,194.64,223.83Z" />
+        </svg> </ion-button> 
+         <lottie-player *ngIf="homeTitle"
+        autoplay="true"
+        controls="false"
+        loop="false"
+        mode="normal"
+        src="../../../assets/images/home.json">
+    </lottie-player>
+        <p *ngIf="homeTitle">Home</p>
+      </ion-item>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="discover"  class="comments tabButton"mode='ios' >
+        <ion-item  #discover lines="none">
+          <ion-button fill="clear" #discoverSVG>
+        <svg #svg  id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><defs>
+          <style>.cls-1{fill:none;stroke:"currentColor";stroke-miterlimit:10;stroke-width:12px;}</style></defs><rect #svg class="cls-1" x="35.5" y="46.8" width="75" height="74.56" rx="19.22"/><rect #svg class="cls-1" x="35.5" y="149.08" width="75" height="74.56" rx="19.22"/>
+          <rect #svg class="cls-1" x="145.5" y="149.08" width="75" height="74.56" rx="19.22"/>
+          <path #svg class="cls-1" d="M170.82,112.18l-11.54-7.83A21.21,21.21,0,0,1,153.89,74l9.57-12.89C170.7,51.38,185,49.06,195.18,56l11.54,7.83a21.2,21.2,0,0,1,5.39,30.32L202.54,107C195.3,116.78,181,119.1,170.82,112.18Z"/></svg> 
+        </ion-button>
+          <lottie-player *ngIf="discoverTitle"
+         autoplay="true"
+         controls="false"
+         loop="false"
+         mode="normal"
+         src="../../../assets/images/discover.json"   >
+       </lottie-player>  <p *ngIf="discoverTitle">Discover</p>
+       </ion-item>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="community" class="notifs tabButton"  mode='ios'>
+        <ion-item #community lines="none">
+        
+          <ion-button fill="clear" #communitySVG>
+          <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><defs><style>.cls-1,.cls-2{fill:none;stroke:#fff;stroke-width:12px;}.cls-1{stroke-miterlimit:10;}.cls-2{stroke-linecap:round;stroke-linejoin:round;}</style></defs>
+          <ellipse #svg class="cls-1" cx="95.55" cy="82.34" rx="10.5" ry="9.79"/><ellipse #svg class="cls-1" cx="169.81" cy="80.31" rx="10.5" ry="9.79"/><ellipse #svg class="cls-1" cx="95.36" cy="149.08" rx="10.5" ry="9.79"/><ellipse #svg class="cls-1" cx="172.65" cy="149.08" rx="10.5" ry="9.79"/>
+          <path #svg class="cls-2" d="M142.77,47.21c41.2,1,64.1-2,64.1,56.84"/><path #svg class="cls-2" d="M120.87,47.21c-41.21,1-64.1-2-64.1,56.84"/><path #svg class="cls-2" d="M58.32,125c1.09,38.4-2.18,59.73,61,59.73"/><path #svg class="cls-2" d="M207.32,125c-.66,35.67-5.71,53.08-30.66,53.08"/><path #svg class="cls-2" d="M157.79,184.86l-31.47,37.65s-7,6.61-7-12V187.93"/></svg>
+        </ion-button>
+          <lottie-player *ngIf="communityTitle"
+        autoplay="true"
+        controls="false"
+        loop="false"
+        mode="normal"
+        src="../../../assets/images/community.json"    >
+    </lottie-player>  <p *ngIf="communityTitle">Community</p>
+  </ion-item>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="therapists" class="settings tabButton" mode='ios'>
+        <ion-item #therapist lines="none">        
+          <ion-button fill="clear" #theraSVG>
+          <svg   xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><defs><style>.cls-1,.cls-2,.cls-3{fill:none;stroke:#fff;stroke-linejoin:round;}.cls-1,.cls-3{stroke-linecap:round;}.cls-1,.cls-2{stroke-width:12px;}.cls-3{stroke-width:10px;}</style></defs><g id="Layer_2" data-name="Layer 2"><circle #svg class="cls-1" cx="93.7" cy="59.11" r="11.9"/><circle #svg class="cls-1" cx="144.1" cy="59.11" r="11.9"/><path #svg class="cls-2" d="M81.8,63.6S66.48,68.11,63.42,84.11s1.36,32.51,12.42,52.94"/>
+          <path #svg class="cls-2" d="M155.11,63.6A20.53,20.53,0,0,1,168,74.67c3.75,7.84,8,21-6.81,58.63"/><path #svg class="cls-2" d="M173,168.72s.23-19.36-24.51-27.12a36.55,36.55,0,0,0-9-1.11H102.28a39.84,39.84,0,0,0-13.52,2.28c-8.45,3-20.55,9.84-25.21,24.6a33.41,33.41,0,0,0-1.45,9.11L61.55,195a28.05,28.05,0,0,0,4.34,16.11c3.38,5.23,9.17,11.23,19.28,11.91,14.89,1,23.28-5,27.84-10.49a25.89,25.89,0,0,0,5.78-16.69l-.12-15"/><path #svg class="cls-2" d="M81.8,157.13s11.41,21.62,33.87,23.66,37.11-27.4,37.11-27.4"/><path #svg class="cls-3" d="M192.67,182.29c-.95,8-15.37,22.38-18.63,23.68-3.25-1.3-17.67-15.73-18.63-23.68-1.34-11.2,12.17-15.95,18.63-8.6C180.51,166.34,194,171.09,192.67,182.29Z"/></g></svg>
+        </ion-button>
+          <lottie-player *ngIf="theraTitle"
+        autoplay="true"
+        controls="false"
+        loop="false"
+        mode="normal"
+        src="../../../assets/images/therapist.json"   >
+    </lottie-player> <p *ngIf="theraTitle">Therapist</p>
+  </ion-item>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+  

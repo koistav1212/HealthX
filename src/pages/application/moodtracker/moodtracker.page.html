@@ -1,0 +1,31 @@
+<div  class="header">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-icon name="close-outline"></ion-icon>
+    </ion-buttons>
+    <ion-title>Your Mood Log</ion-title>
+    
+  <ion-buttons slot="end">
+    <ion-icon (click)="showAlert()" name="trash-outline"></ion-icon>
+  </ion-buttons>
+  </ion-toolbar>
+</div>
+
+<div  class="body">
+<ion-list>
+  <ion-card *ngFor="let item of arr">
+    <h2 class="splash-h1">{{getDate(item.timestamp)}}</h2>
+   <div style="display: flex;flex-direction:row; justify-content:space-between;">
+  <div class="imgConatiner"><img style="width: 30px; height:30px" src="../../../assets/images/panda-bear.png"/>
+  <p style="font-style: bold;"> {{ map.get(item.moodName)[0]}}</p></div>
+<p>{{getTime(item.timestamp)}}</p>
+  </div>
+  <p>Emotions</p>
+  <div style="display:flex;" class="emotionCnt">
+    <p class="emotion" [ngStyle]="{'background-color':map.get(item.moodName)[1]}" *ngFor="let item1 of item.Pos">{{item1.name}}</p>
+    
+    <p class="emotion" [ngStyle]="{'background-color':map.get(item.moodName)[1]}" *ngFor="let item1 of item.Neg">{{item1.name}}</p>
+  </div>
+  </ion-card>
+</ion-list>
+</div>

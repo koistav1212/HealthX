@@ -1,0 +1,24 @@
+ 
+  .knowCard
+  { margin: 0;
+    width: 120px !important;
+    height: 140px;
+    border-radius: 10px;
+      background:  center/cover;
+      text-align: center;
+      p{
+        color:white;
+        position:absolute;
+        bottom: 10px;
+        left: 5px;
+        margin: 0 auto;
+        font-weight: 600;
+      }
+     
+  }
+  .cntBtn{
+    margin:20px auto;--color: white; position: fixed; bottom: 0; left: 0; width: 75%;right: 0;
+    border-radius: 22px;
+    height: 50px;
+    background-color: #8ABCE1;
+  }

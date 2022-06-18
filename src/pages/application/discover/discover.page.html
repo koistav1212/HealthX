@@ -1,0 +1,133 @@
+<ion-header>
+
+    <ion-toolbar [class]="toolbar">
+
+        <ion-buttons slot="start">
+            <ion-menu-button > <img class="header-img" src="../../../assets/images/panda-bear.png"/></ion-menu-button>
+        </ion-buttons>
+        <ion-title class="header-title" >Discover</ion-title>
+        <ion-buttons slot="end">
+    <img  class="notification-img" src="../../../assets/images/notification.svg">
+</ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content [scrollEvents]="true" (ionScroll)="Scroll($event)" #contents>
+    <div class="drawer" #drawer></div>
+    <ion-searchbar *ngIf="!scrolledDown" class="searchBar" placeholder="Topic Name" [(ngModel)]="term"></ion-searchbar>
+
+    <ion-segment scrollable value="0" mode="md" (ionChange)="segmentChanged(segment)" [(ngModel)]="segment">
+        <ion-segment-button mode="ios" id="seg-1" value="0">
+
+            <p>All</p>
+        </ion-segment-button>
+        <ion-segment-button mode="ios" id="seg-2" value="1">
+
+            <p>Health Packs</p>
+        </ion-segment-button>
+        <ion-segment-button mode="ios" id="seg-3" value="2">
+            <p>Self-assessment</p>
+        </ion-segment-button>
+        <ion-segment-button mode="ios" id="seg-4" value="3">
+            <p>Blogs</p>
+        </ion-segment-button>
+        <ion-segment-button mode="ios" id="seg-5" value="4">
+            <p>Relaxation Techniques</p>
+        </ion-segment-button>
+        <ion-segment-button mode="ios" id="seg-6" value="5">
+
+            <p>Calming Sounds</p>
+        </ion-segment-button>
+    </ion-segment>
+
+    <p class="searchResult" *ngIf="term">Related Items </p>
+    <ion-list>
+
+        <div class="listItems" >
+
+            <div class="details" *ngIf="!term">
+                <p class="ion-text-start">Recomended Videos </p>
+                <p class="ion-text-end" (click)="viewall('0')">View All
+                    <ion-icon name="chevron-forward-circle-outline"></ion-icon>
+                </p>
+            </div>
+            <ion-slides [options]="slideOpts3">
+                <ion-slide *ngFor="let item1 of arr[0].arrayname | async| filter:term" (click)="playVideo(item1)">
+                    <ion-card class="knowCard" style="--background: linear-gradient(rgba(0, 0, 0, 0),rgb(77, 73, 73)),url({{item1.imageurl}}); background-size: cover;
+                    background-repeat: no-repeat;">
+                        <p style="position: absolute;  overflow: hidden; max-lines: 1;max-height: 20px;
+                        bottom: 0;">{{item1.title}}</p>
+
+                    </ion-card>
+                </ion-slide>
+            </ion-slides>
+            <div class="details" *ngIf="!term">
+                <p class="ion-text-start">Health Packs </p>
+                <p class="ion-text-end" (click)="viewall('1')">View All
+                    <ion-icon name="chevron-forward-circle-outline"></ion-icon>
+                </p>
+            </div>
+            <ion-slides [options]="slideOpts3">
+                <ion-slide *ngFor="let item1 of arr[1].arrayname | async| filter:term" >
+                    <ion-card class="knowCard" style="--background: linear-gradient(rgba(0, 0, 0, 0),rgb(77, 73, 73)),url({{item1.imageurl}}); background-size: cover;
+                    background-repeat: no-repeat;">
+                        <p style="position: absolute;  overflow: hidden; max-lines: 1;max-height: 20px;
+                        bottom: 0;">{{item1.title}}</p>
+
+                    </ion-card>
+                </ion-slide>
+            </ion-slides>
+            <div class="details" *ngIf="!term">
+                <p class="ion-text-start">Self Assessment </p>
+                <p class="ion-text-end" (click)="viewall('2')">View All
+                    <ion-icon name="chevron-forward-circle-outline"></ion-icon>
+                </p>
+            </div>
+            <ion-slides [options]="slideOpts3">
+                <ion-slide *ngFor="let item1 of arr[2].arrayname | async| filter:term" >
+                    <ion-card class="knowCard" style="--background: linear-gradient(rgba(0, 0, 0, 0),rgb(77, 73, 73)),url({{item1.imageurl}}); background-size: cover;
+                    background-repeat: no-repeat;">
+                        <p style="position: absolute;  overflow: hidden; max-lines: 1;max-height: 20px;
+                        bottom: 0;">{{item1.title}}</p>
+
+                    </ion-card>
+                </ion-slide>
+            </ion-slides>
+            <div class="details" *ngIf="!term">
+                <p class="ion-text-start">Blogs </p>
+                <p class="ion-text-end" (click)="viewall('3')">View All
+                    <ion-icon name="chevron-forward-circle-outline"></ion-icon>
+                </p>
+            </div>
+            <ion-slides [options]="slideOpts3">
+                <ion-slide *ngFor="let item1 of arr[3].arrayname | async| filter:term" >
+                    <ion-card class="knowCard" style="--background: linear-gradient(rgba(0, 0, 0, 0),rgb(77, 73, 73)),url({{item1.imageurl}}); background-size: cover;
+                    background-repeat: no-repeat;">
+                        <p style="position: absolute;  overflow: hidden; max-lines: 1;max-height: 20px;
+                        bottom: 0;">{{item1.title}}</p>
+
+                    </ion-card>
+                </ion-slide>
+            </ion-slides>
+            <div class="details" *ngIf="!term">
+                <p class="ion-text-start">Relaxation Techniques </p>
+                <p class="ion-text-end" (click)="viewall('4')">View All
+                    <ion-icon name="chevron-forward-circle-outline"></ion-icon>
+                </p>
+            </div>
+            <ion-slides [options]="slideOpts3">
+                <ion-slide *ngFor="let item1 of arr[4].arrayname | async| filter:term" (click)="playAudio(item1)">
+                    <ion-card class="knowCard" style="--background: linear-gradient(rgba(0, 0, 0, 0),rgb(77, 73, 73)),url({{item1.imageurl}}); background-size: cover;
+                    background-repeat: no-repeat;">
+                        <p style="position: absolute;  overflow: hidden; max-lines: 1;max-height: 20px;
+                        bottom: 0;">{{item1.title}}</p>
+
+                    </ion-card>
+                </ion-slide>
+            </ion-slides>
+
+        </div>
+    </ion-list>
+
+</ion-content>
+<ion-footer>
+</ion-footer>

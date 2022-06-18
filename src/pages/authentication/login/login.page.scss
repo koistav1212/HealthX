@@ -1,0 +1,35 @@
+ion-content{
+    --background: #514E6D;
+}
+.container{
+    width: 80%;height: 100%; margin: auto;background:white;
+    text-align: center;
+}
+h2{
+    
+    text-align: center;
+    margin: auto;
+    color: #9C9C9C;
+    letter-spacing: 15px;
+    font-weight: 400;
+    padding-top: 40%;
+}
+ion-item{    
+    --background:transparent;
+    --border-color:#969696;
+    --border-radius:2px;
+    --border-width:2px;
+    margin: 5px 10px;
+}
+ion-list{
+    background:transparent;
+}
+ion-input{
+    --background:transparent;
+    --color: #969696;
+    --placeholder-color:#969696;
+    --background:transparent;
+    --border-color:#969696;
+    --border-radius:2px;
+    --border-width:1px !important;
+}

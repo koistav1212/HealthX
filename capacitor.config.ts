@@ -1,0 +1,33 @@
+import { CapacitorConfig } from '@capacitor/cli';
+
+const config: CapacitorConfig = {
+  appId: 'com.example.app',
+  appName: 'youmatterapp',
+  webDir: 'www',
+  bundledWebRuntime: false,
+  cordova: {
+    preferences: {
+      KeyboardResize: 'false',
+      ScrollEnabled: 'false',
+      'android-minSdkVersion': '22',
+      AndroidXEnabled: 'true',
+      GradlePluginKotlinEnabled: 'true',
+      GradlePluginKotlinCodeStyle: 'official',
+      GradlePluginKotlinVersion: '1.3.50',
+      BackupWebStorage: 'none',
+      SplashMaintainAspectRatio: 'true',
+      FadeSplashScreenDuration: '0',
+      FadeSplashScreen: 'false',
+      ShowSplashScreenSpinner: 'false',
+      SplashShowOnlyFirstTime: 'false',
+      SplashScreen: 'none',
+      LottieBackgroundColor: '#ffffff',
+      LottieFullScreen: 'true',
+      LottieLoopAnimation: 'true',
+      SplashScreenDelay: '0',
+      LottieAnimationLocation: 'www/assets/images/splash.json'
+    }
+  }
+};
+
+export default config;

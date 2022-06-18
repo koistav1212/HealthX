@@ -1,0 +1,29 @@
+ion-content{
+    --background: #514E6D;
+}
+.container{
+    width: 80%;height: 100%; margin: auto;background:white;
+    text-align: center;
+}
+h2{
+    
+    text-align: center;
+    margin: auto;
+    color: #9C9C9C;
+    letter-spacing: 15px;
+    font-weight: 400;
+    padding-top: 20%;
+}
+ion-item{
+    --border-color:#969696;
+    --border-radius:10px;
+    --border-width:1px;
+    margin: 5px 10px;--background:transparent;
+}
+ion-list{
+    background:transparent;
+}
+ion-input{
+    --background:transparent;
+    --color: #969696;
+    --placeholder-color:#969696;}

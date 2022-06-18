@@ -1,0 +1,28 @@
+<ion-content >
+ 
+	<img src="../../../assets/images/Group 8.svg" style="position: fixed; width: 100%; "/>
+  <div class="container" >
+	<h2 >YouMatter</h2>
+ <p class="splash-h1" style="color: #969696; margin-top: 30%;font-weight: 800;">Log in</p>
+ <ion-list>
+ <ion-item lines="none" style="   --border-color:#969696;
+ --border-radius:10px;
+ --border-width:1px;
+ margin: 5px 10px;">
+  <ion-label position="floating" style="--color: #969696;">Email</ion-label>
+  <ion-input type="email" [(ngModel)]="username"></ion-input>
+  </ion-item>
+
+  <ion-item lines="none" style="   --border-color:#969696;
+  --border-radius:10px;
+  --border-width:1px;
+  margin: 5px 10px;">
+  <ion-label position="floating" style="--color: #969696;">Password</ion-label>
+  <ion-input type="password" [(ngModel)]="password"></ion-input>
+  </ion-item>
+</ion-list>
+<ion-button shape="round" class="splash-h3" fill="solid"  (click)="login()" style="margin: 0;    width: 95%;--background: #759DCE;--color: white;">
+  LOG IN</ion-button>
+  </div>
+
+</ion-content>

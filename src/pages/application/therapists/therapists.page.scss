@@ -1,0 +1,79 @@
+ion-header{
+  background:url(../../../assets/images/TherapistBG1.svg) no-repeat top/cover;
+  height: 100%;
+  z-index: 0;
+}
+ion-toolbar{
+ --background: transparent;
+ margin: 18px 0px;
+ transition: margin 200ms ease-in-out;
+}
+ion-content{
+  --background:url(../../../assets/images/TherapistBG2.svg) no-repeat top/cover !important ;
+  position: absolute;
+ top:15%;
+height: 92%;
+  transition: top 250ms ease-in-out;
+ --padding-bottom:60px
+}
+ion-searchbar{
+  --placeholder-color:#8E8E8E;
+  --color:#8E8E8E;
+  --background: #DBF3E5;
+  width: 100%;
+  padding: 0px 10px;
+  margin-top: 10px;
+  --border-radius:30px;
+}
+.shrink {
+ margin: 0;
+  transition: margin 200ms ease-in-out;
+}
+.contentShrink{
+  transform: translateY(-7%);
+  transition: transform 250ms ease-in-out;
+}
+.dates{
+  display: flex;
+  flex-direction: row;
+  margin: 100px auto 20px;
+  color: white; width: 80%;
+  justify-content: space-between;
+}
+.drawer{
+  width: 80px;
+  height: 2px;
+  margin: 10px auto;
+  background: black;
+}
+   ion-slide {
+    width: 100px;
+    height: 140px;    
+   --background: transparent;
+   }
+   ion-list{
+     background-color: transparent;
+   }
+   ion-slides {
+    width: 98%;
+    --background: transparent;
+   }
+   ion-card{
+     background-color: white;
+     
+     height: 100%;
+     border-radius: 10px;
+     color: black;
+     margin-bottom: 20px;display: flex;
+   flex-direction: row;
+    }
+   p{
+     color: #9B9C9C;
+     font-weight: 500;
+     font-size: 14px; 
+     padding: 0 5px;
+     margin: 5px;
+   }
+   ion-icon{
+     color: #5EBB83;
+   }

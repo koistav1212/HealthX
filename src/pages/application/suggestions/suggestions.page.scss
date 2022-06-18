@@ -1,0 +1,20 @@
+ion-header {
+    background: url(../../../assets/images/featuresBG1.png) no-repeat top/cover;
+    height: 100%;
+    z-index: 0;
+  }
+  
+  ion-toolbar {
+    --background: transparent;
+    margin: 18px 0px;
+    transition: margin 200ms ease-in-out;
+  }
+  ion-content {
+    --background: url(../../../assets/images/featuresBG2.svg) no-repeat top/cover !important;
+    position: absolute;
+    top: 15%;
+    height: 92%;
+    transition: top 250ms ease-in-out;
+    
+    border-radius: 20px;
+  }

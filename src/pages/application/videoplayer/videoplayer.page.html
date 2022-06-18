@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>videoplayer</ion-title>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="video-player-wrapper">
+    <h2>Angular Video Player with Controls Example</h2>
+    <vg-player>
+      <vg-overlay-play></vg-overlay-play>
+      <vg-buffering></vg-buffering>
+      <vg-scrub-bar>
+        <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+        <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+      </vg-scrub-bar>
+      <vg-controls>
+        <vg-play-pause></vg-play-pause>
+        <vg-playback-button></vg-playback-button>
+        <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+        <vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>
+        <vg-time-display vgProperty="left" vgFormat="mm:ss"></vg-time-display>
+        <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
+        <vg-track-selector></vg-track-selector>
+        <vg-mute></vg-mute>
+        <vg-volume></vg-volume>
+        <vg-fullscreen></vg-fullscreen>
+      </vg-controls>
+      <video [vgMedia]="$any(media)" #media id="singleVideo" preload="auto" crossorigin>
+      <source src="https://firebasestorage.googleapis.com/v0/b/ioniclogin-318712.appspot.com/o/filesStorage%2Fpexels-ivan-samkov-8502839.mp4?alt=media&token=d09ecd60-02e5-45b5-a192-8bfb1a14b8ea" type="video/mp4"> 
+      </video>
+    </vg-player>
+  </div>
+
+</ion-content>
