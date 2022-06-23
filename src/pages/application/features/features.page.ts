@@ -25,7 +25,8 @@ export class FeaturesPage implements OnInit {
  let page=event.imagename.toString().toLowerCase().split(" ")[0] 
  console.log(event)
  let navigationExtras: NavigationExtras = { state: { activity:event } };
-this.router.navigateByUrl(`/menu/${page}`,navigationExtras);
+
+ this.router.navigate(['menu/featureLists'], { state: { category:event}})
   }
   
   toolbar = ''; calenderVisible:Boolean=false;

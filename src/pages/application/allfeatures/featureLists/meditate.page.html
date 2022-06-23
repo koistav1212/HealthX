@@ -5,7 +5,7 @@
     <ion-buttons slot="start">
       <ion-back-button> <ion-icon name="close-outline"></ion-icon></ion-back-button>
     </ion-buttons>
-    <ion-title class="header-title">Meditate</ion-title>
+    <ion-title class="header-title">{{category.category.imagename}}</ion-title>
     <ion-buttons slot="end">
       <img class="notification-img" src="../../../../assets/images/notification.svg">
     </ion-buttons>
@@ -17,5 +17,16 @@
     style="border-left: turquoise 10px; border-right: turquoise 10px; overflow: hidden !important; width: 100%; background:url(../../../assets/images/GlobalBG2.svg) top/cover;">
     <div class="drawer" #drawer></div>
   </div>
-
+  <ion-grid class="home-gallery">
+    <ion-row>
+        <ion-col size="6" *ngFor="let item of featuresData | async" (click)="nav(item)"> 
+            <ion-card class="products_list" style="border-radius: 20px; --background: white;" (click)="featureNav(item)">
+                
+                    <img [src]="item.imageurl"  style="height: 50%;"/>
+                     <p class="ion-text-center" style=" width: 100%;   margin:0 0 10px; color: #848484;  z-index: 2;">{{item.imagename}}</p>
+                    
+            </ion-card>
+        </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

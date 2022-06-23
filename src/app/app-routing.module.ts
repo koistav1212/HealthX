@@ -87,6 +87,11 @@ const routes: Routes = [
     path: 'review',
     loadChildren: () => import('../pages/application/review/review.module').then( m => m.ReviewPageModule)
   },
+  {
+    path: 'feature-details',
+    loadChildren: () => import('../pages/application/allfeatures/feature-details/feature-details.module').then( m => m.FeatureDetailsPageModule)
+  },
+
 
 
 

@@ -258,17 +258,16 @@ export class HomePage implements OnInit {
   }
     blogView(item:any)
     {
-      this.router.navigate(['menu/blog-view'],{state:{item:item}})
+      this.router.navigate(['menu/blogview'],{state:{item:item}})
     }
     reviewView(item:any)
     {
       this.router.navigate(['menu/review'],{state:{item:item}})
     }
     featureNav(event){
-      let page=event.imagename.toString().toLowerCase().split(" ")[0] 
-      console.log(event)
-      let navigationExtras: NavigationExtras = { state: { activity:event } };
-     this.router.navigateByUrl(`/menu/${page}`,navigationExtras);
+     
+      this.router.navigate(['menu/featureLists'], { state: { category:event}})
+     //this.router.navigateByUrl(`/menu/${page}`,navigationExtras);
        }
     toolbar = ''; calenderVisible:Boolean=false;
     async ngAfterViewInit()

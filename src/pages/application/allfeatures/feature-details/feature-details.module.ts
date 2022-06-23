@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { SoundsPageRoutingModule } from './sounds-routing.module';
+import { FeatureDetailsPageRoutingModule } from './feature-details-routing.module';
 
-import { SoundsPage } from './sounds.page';
+import { FeatureDetailsPage } from './feature-details.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SoundsPageRoutingModule
+    FeatureDetailsPageRoutingModule
   ],
-  declarations: [SoundsPage]
+  declarations: [FeatureDetailsPage]
 })
-export class SoundsPageModule {}
+export class FeatureDetailsPageModule {}

@@ -55,34 +55,18 @@ const routes :Routes=[
           }
         ]
       },
+    
       {
-        path: 'breathe',
+        path: 'featureLists',
         children: [
           {
             path: '',
-            loadChildren: () => import('../allfeatures/breathe/breathe.module').then( m => m.BreathePageModule)
-          }
-        ]
-      },
-      {
-        path: 'meditate',
-        children: [
-          {
-            path: '',
-            loadChildren: () => import('../allfeatures/meditate/meditate.module').then( m => m.MeditatePageModule)
+            loadChildren: () => import('../allfeatures/featureLists/meditate.module').then( m => m.MeditatePageModule)
           }
         ]
       },
       
       {
-        path: 'medicines',
-        children: [
-          {
-            path: '',
-            loadChildren: () => import('../allfeatures/medicines/medicines.module').then( m => m.MedicinesPageModule)
-          }
-        ]
-      }, {
         path: 'viewall',
         children: [
           {
@@ -145,15 +129,7 @@ const routes :Routes=[
           }
         ]
       },
-       {
-        path: 'sleep',
-        children: [
-          {
-            path: '',
-            loadChildren: () => import('../allfeatures/sleep/sleep.module').then( m => m.SleepPageModule)
-          }
-        ]
-      },
+    
       {
         path: 'userprofile',
         children: [
@@ -164,25 +140,16 @@ const routes :Routes=[
         ]
       },
       {
-        path: 'sounds',
+        path: 'featureDetails',
         children: [
           {
             path: '',
-            loadChildren: () => import('../allfeatures/sounds/sounds.module').then( m => m.SoundsPageModule)
+            loadChildren: () => import('../allfeatures/feature-details/feature-details-routing.module').then( m => m.FeatureDetailsPageRoutingModule)
           }
         ]
       },
       {
-        path: 'vision',
-        children: [
-          {
-            path: '',
-            loadChildren: () => import('../allfeatures/vision/vision.module').then( m => m.VisionPageModule)
-          }
-        ]
-      },
-      {
-        path: 'blog-view',
+        path: 'blogview',
         children: [
           {
             path: '',
@@ -191,7 +158,7 @@ const routes :Routes=[
         ]
       },
       {
-        path: 'fact-page',
+        path: 'factpage',
         children: [
           {
             path: '',
