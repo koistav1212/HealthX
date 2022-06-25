@@ -1,4 +1,5 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { MoodtrackerPage } from '../moodtracker/moodtracker.page';
@@ -43,7 +44,7 @@ map = new Map<string, Array<string>>([
 currenColor:string='';currMood:any;currLottie:any;disabled=true;
  @ViewChild('header')header:ElementRef;gender:any;
  @Input() mood:any; 
-  constructor(private router:Router,private modalCtrl: ModalController,) { }
+  constructor(private router:Router,private modalCtrl: ModalController,private afs:AngularFirestore) { }
 
   ngOnInit() {
     
@@ -66,20 +67,23 @@ currenColor:string='';currMood:any;currLottie:any;disabled=true;
       moodName:this.mood,
       Neg:this.selectedNeg,
       Pos:this.selectedPos,
-      timestamp:x
+      timestamp:x,
+      color:this.currenColor,
     }
-    console.log(res)
-   // this.router.navigate(['menu/moodTracker'],{state:{item:res}})
-   this.trackerModal(res)
+   // console.log(res)
+    this.afs.collection('moodlog').add(res).then((res1:any)=>{
+      console.log(res1)
+    })
+    this.router.navigate(['menu/moodTracker'],{state:{item:res}})
+   
+   //this.trackerModal()
     this.dismiss()
   }
-  async trackerModal(res:any) {
+  async trackerModal() {
 
     const modal = await this.modalCtrl.create({
       component: MoodtrackerPage,
-      componentProps: {
-        'res': res,  
-      }
+     
     })
     return await modal.present();
   }

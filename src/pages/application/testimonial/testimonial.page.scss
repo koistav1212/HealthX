@@ -1,5 +1,5 @@
 ion-header {
-    background: url(../../../assets/images/featuresBG1.png) no-repeat top/cover;
+    background: url(../../../assets/images/GlobalBG1.svg) no-repeat top/cover;
     height: 100%;
     z-index: 0;
   }
@@ -10,7 +10,7 @@ ion-header {
     transition: margin 200ms ease-in-out;
   }
   ion-content {
-    --background: url(../../../assets/images/featuresBG2.svg) no-repeat top/cover !important;
+    --background: url(../../../assets/images/GlobalBG2.svg) no-repeat top/cover !important;
     position: absolute;
     top: 15%;
     height: 92%;

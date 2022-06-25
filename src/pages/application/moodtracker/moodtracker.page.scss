@@ -2,22 +2,29 @@ ion-icon{
     color: black;
     font-size: 25px;
 }
-.header{
-    text-align: center;
+
+ion-header {
+    background:  url(../../../assets/images/GlobalBG1.svg) no-repeat top/cover ;
     height: 100%;
-    background: url("../../../assets/images/GlobalBG1.svg") no-repeat top/cover !important;
-}
-.body{
-    height: 100%;
-    width: 100%;
-    margin-top: 40%;
-    position: fixed;
-    color: black;
-    border-top-left-radius: 20px;
-    border-top-right-radius:20px;
-    background: url("../../../assets/images/GlobalBG2.svg") no-repeat top/cover !important;
-    padding: 20px 0;
+    z-index: 0;
   }
+  
+  ion-toolbar {
+    --background: transparent;
+    margin: 18px 0px;  
+    transition: margin 200ms ease;
+  }
+  
+  ion-content {
+    --background: url(../../../assets/images/GlobalBG2.svg) no-repeat top/cover !important;
+    position: absolute;
+    top: 15%;
+    height: 92%;
+    transition: top 250ms ease-in-out;
+    --padding-bottom: 70px; 
+    border-radius: 20px;
+  }
+
   .imgConatiner{
       display: flex;
       flex-direction: row;

@@ -18,6 +18,10 @@ pages=[
     url:'/menu/features'
   },
   {
+title:"Mood Log",
+url:'/menu/moodTracker'
+  },
+  {
     title:'Go Premium',
     url:'/menu/plans'
   },

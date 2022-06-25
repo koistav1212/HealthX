@@ -1,6 +1,7 @@
 import { DatePipe } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
-import { AlertController, ModalController } from '@ionic/angular';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-moodtracker',
@@ -8,8 +9,8 @@ import { AlertController, ModalController } from '@ionic/angular';
   styleUrls: ['./moodtracker.page.scss'],
 })
 export class MoodtrackerPage implements OnInit {
-@Input() res:any;arr:any=[];currenColor:any;currMood:any;
-  constructor(private alertCntrl:AlertController,private datePipe: DatePipe,private modalCtrl: ModalController,) { }
+arr:any=[];currenColor:any;currMood:any;
+  constructor(private alertCntrl:AlertController,private datePipe: DatePipe,private afs:AngularFirestore) { }
   map = new Map<string, Array<string>>([
     ["energetic", ["Energetic", "#03fc3d","../../../assets/images/happy-boy.json"]],
     ["happy", ["Happy","#6ffc03","../../../assets/images/swinging-happy.json"]]	,
@@ -21,15 +22,16 @@ export class MoodtrackerPage implements OnInit {
   ngOnInit() {
     
     
-    this.currenColor=this.map.get(this.res.moodName)[1];
-    this.currMood=this.map.get(this.res.moodName)[0];
-    this.arr.push(this.res)
+    //this.currenColor=this.map.get(this.res.moodName)[1];
+    //this.currMood=this.map.get(this.res.moodName)[0];
+    this.arr= this.afs.collection('moodlog').valueChanges();
+   // this.arr.push(this.res)
   }
 showAlert()
 {
     this.alertCntrl.create({
-      header: 'Confirm Alert',
-      subHeader: 'Beware lets confirm',
+      header: 'Confirm Reset',
+      subHeader: '',
       message: 'Are you sure? you want to leave without safty mask?',
       buttons: [
         {
@@ -64,7 +66,5 @@ public getDate(dateSent:any)
   {
     return this.datePipe.transform(new Date(dateSent).getTime(),'hh:mm a')
   }
-  dismiss() {
-    this.modalCtrl.dismiss();
-  }
+
 }

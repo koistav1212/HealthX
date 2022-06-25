@@ -29,6 +29,12 @@ export class MeditatePage implements OnInit {
   {
     if(item.type=='mp3')
     this.router.navigate(['../menu/audioplayer'],{state:{item:item}})
+    else if(item.type=='json')    
+    this.router.navigate(['../menu/featureDetails'],{state:{item:item}})
+    else if(item.type=='mp4')
+    this.router.navigate(['../menu/videoplayer'],{state:{item:item}})
+    
+
   }
   ngAfterViewInit() {
     this.header.nativeElement.style.zindex="0"
