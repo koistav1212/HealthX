@@ -22,7 +22,7 @@ export class HomePage implements OnInit {
   //photoUrl= firebase.auth().currentUser.photoURL;
   @ViewChild('featureImg',{read: ElementRef}) featuresImg:ElementRef; 
   @ViewChild('slides', { static: false }) slides: IonSlides;
-  featuresData:Observable<any[]>;slidesData2 = [];slidesData3 = [];currentSlide:any;
+  featuresData:Observable<any[]>;slidesData2 :any= [];slidesData3 = [];currentSlide:any;
   featuresAnim:any[];  
   constructor(public actionsheetCtrl: ActionSheetController  ,public platform:Platform,private modalCtrl:ModalController
      , public router:Router,private gestureCntrl:GestureController,public afs:AngularFirestore) { 
@@ -145,6 +145,7 @@ export class HomePage implements OnInit {
       }
     }
    ngOnInit() {
+    this.getallData()
     this.featuresAnim=[
       {
         animationurl:'../../../assets/images/breathe.json'
@@ -168,33 +169,7 @@ export class HomePage implements OnInit {
         animationurl:'../../../assets/images/VisionBoard.json'
       },
     ]
-           this.slidesData2 = [
-        {
-          title: 'Relaxation Technique',
-          image: "../../../assets/images/MaskGroup.png",
-          description: 'The ionic conference app is a practical preview of the ionic framework in action, and a demonstration of proper code use.'
-        },
-        {
-          title: 'Stop Pill',
-          image: "../../../assets/images/online.png",
-          description: 'Ionic Framework is an open source SDK that enables developers to build high quality mobile apps with web technologies like HTML, CSS, and JavaScript.'
-        },
-        {
-          title: 'Sleep',
-          image:"../../../assets/images/vision2.png",
-          description: 'Ionic Appflow is a powerful set of services and features built on top of Ionic Framework that brings a totally new level of app development agility to mobile dev teams.'
-        },
-        {
-          title: 'Sleep',
-          image:"../../../assets/images/vision3.png",
-          description: 'Ionic Appflow is a powerful set of services and features built on top of Ionic Framework that brings a totally new level of app development agility to mobile dev teams.'
-        },
-        {
-          title: 'Vision Board',
-          image:"../../../assets/images/vision3.png",
-          description: 'Ionic Appflow is a powerful set of services and features built on top of Ionic Framework that brings a totally new level of app development agility to mobile dev teams.'
-        }
-      ];
+         
       this.slidesData3 = [
         {
           title: 'Riana Roy',
@@ -226,6 +201,10 @@ export class HomePage implements OnInit {
         }
       ];
      
+    }
+    getallData()
+    {
+      this.slidesData2=this.afs.collection('blogs').valueChanges();
     }
     async slideChanged(slides: IonSlides) {
   

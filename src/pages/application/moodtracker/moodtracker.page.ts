@@ -1,5 +1,6 @@
 import { DatePipe } from '@angular/common';
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AlertController } from '@ionic/angular';
 
@@ -9,8 +10,8 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./moodtracker.page.scss'],
 })
 export class MoodtrackerPage implements OnInit {
-arr:any=[];currenColor:any;currMood:any;
-  constructor(private alertCntrl:AlertController,private datePipe: DatePipe,private afs:AngularFirestore) { }
+arr:any=[];currenColor:any;currMood:any;user:any={};
+  constructor(private alertCntrl:AlertController,private datePipe: DatePipe,private afs:AngularFirestore,private afAuth:AngularFireAuth) { }
   map = new Map<string, Array<string>>([
     ["energetic", ["Energetic", "#03fc3d","../../../assets/images/happy-boy.json"]],
     ["happy", ["Happy","#6ffc03","../../../assets/images/swinging-happy.json"]]	,
@@ -21,11 +22,17 @@ arr:any=[];currenColor:any;currMood:any;
   ]);
   ngOnInit() {
     
+    this.afAuth.authState.subscribe((user:any)=>{
+      if(user)
+      this.user=user;
+      this.afs.collection('users').doc(this.user.uid).collection('moodlog').valueChanges().subscribe((data:any)=>{
+        console.log(data)
+        this.arr=data
+      });
     
-    //this.currenColor=this.map.get(this.res.moodName)[1];
-    //this.currMood=this.map.get(this.res.moodName)[0];
-    this.arr= this.afs.collection('moodlog').valueChanges();
-   // this.arr.push(this.res)
+    
+    })
+    
   }
 showAlert()
 {

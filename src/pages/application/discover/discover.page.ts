@@ -95,6 +95,10 @@ playAudio(item:any)
   this.router.navigate(['../audioplayer'],{state:{item:item}})
 
 }
+blogView(item:any)
+    {
+      this.router.navigate(['menu/blogview'],{state:{item:item}})
+    }
 async segmentChanged(event) {
   if(event==0)
   {

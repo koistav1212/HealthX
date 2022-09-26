@@ -4,13 +4,13 @@
       <ion-list>
         <ion-menu-toggle autoHide="false">
           <div routerDirection="root" class="userContainer" lines='none'>
-            <div>
-              <div class="imgContainer">
+            <div >
+              <div class="imgContainer" routerLink="/menu/userprofile">
 
-                <i routerLink="/menu/userprofile" class="fa fa-pencil"></i>
+                <i  class="fa fa-pencil"></i>
                 <img src="../../../assets/images/panda-bear.png" class="userImg" />
               </div>
-              <p style="color: #f65a5a;font-size: 20px;margin-top: 12px;margin-bottom: 0;">userData.name</p>
+              <p  routerLink="/menu/userprofile" style="color: #f65a5a;font-size: 20px;margin-top: 12px;margin-bottom: 0;">{{userData.username}}</p>
             </div>
           </div>
         </ion-menu-toggle>

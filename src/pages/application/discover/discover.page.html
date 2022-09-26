@@ -99,7 +99,7 @@
                 </p>
             </div>
             <ion-slides [options]="slideOpts3">
-                <ion-slide *ngFor="let item1 of arr[3].arrayname | async| filter:term" >
+                <ion-slide *ngFor="let item1 of arr[3].arrayname | async| filter:term" (click)="blogView(item1)">
                     <ion-card class="knowCard" style="--background: linear-gradient(rgba(0, 0, 0, 0),rgb(77, 73, 73)),url({{item1.imageurl}}); background-size: cover;
                     background-repeat: no-repeat;">
                         <p style="position: absolute;  overflow: hidden; max-lines: 1;max-height: 20px;
@@ -115,7 +115,7 @@
                 </p>
             </div>
             <ion-slides [options]="slideOpts3">
-                <ion-slide *ngFor="let item1 of arr[4].arrayname | async| filter:term" (click)="playAudio(item1)">
+                <ion-slide *ngFor="let item1 of arr[4].arrayname | async| filter:term" (click)="blogView(item1)">
                     <ion-card class="knowCard" style="--background: linear-gradient(rgba(0, 0, 0, 0),rgb(77, 73, 73)),url({{item1.imageurl}}); background-size: cover;
                     background-repeat: no-repeat;">
                         <p style="position: absolute;  overflow: hidden; max-lines: 1;max-height: 20px;

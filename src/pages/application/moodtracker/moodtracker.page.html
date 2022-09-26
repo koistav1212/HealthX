@@ -1,8 +1,8 @@
-<ion-header >
+<ion-header>
 
   <ion-toolbar [class]="toolbar">
     <ion-buttons slot="start">
-      <ion-icon name="close-outline"></ion-icon>
+      <ion-menu-button> <img class="header-img" src="../../../assets/images/panda-bear.png" /></ion-menu-button>
     </ion-buttons>
     <ion-title class="header-title">Your Mood Log</ion-title>
 
@@ -10,30 +10,35 @@
       <ion-icon (click)="showAlert()" name="trash-outline"></ion-icon>
     </ion-buttons>
   </ion-toolbar>
+  <ion-header>
 
-</ion-header>
-<ion-content overflow-scroll="true">
-  <div slot="fixed"
-    style="border-left: turquoise 10px; border-right: turquoise 10px; overflow: hidden !important; width: 100%; background:url(../../../assets/images/GlobalBG2.svg) top/cover;">
-    <div class="drawer" #drawer></div>
-  </div>
-  <ion-list>
-    <div  *ngFor="let item of arr|async">
-    <ion-card>
-      <h2 class="splash-h1">{{getDate(item.timestamp)}}</h2>
-      <div style="display: flex;flex-direction:row; justify-content:space-between;">
-        <div class="imgConatiner"><img style="width: 30px; height:30px" src="../../../assets/images/panda-bear.png" />
-          <p style="font-style: bold;"> {{ map.get(item.moodName)[0]}}</p>
-        </div>
-        <p>{{getTime(item.timestamp)}}</p>
-      </div>
-      <p>Emotions</p>
-      <div style="display:flex;" class="emotionCnt">
-        <p class="emotion" [ngStyle]="{'background-color':item.color}" *ngFor="let item1 of item.Pos">{{item1.name}}</p>
-
-        <p class="emotion" [ngStyle]="{'background-color':item.color}" *ngFor="let item1 of item.Neg">{{item1.name}}</p>
-      </div>
-    </ion-card>
+  </ion-header>
+  <ion-content overflow-scroll="true">
+    <div slot="fixed"
+      style="border-left: turquoise 10px; border-right: turquoise 10px; overflow: hidden !important; width: 100%; background:url(../../../assets/images/GlobalBG2.svg) top/cover;">
+      <div class="drawer" ></div>
     </div>
-  </ion-list>
-</ion-content>
+    <ion-grid style="padding-bottom:35px ;" class="home-gallery">
+      <ion-row >
+          <ion-col  *ngFor="let item of arr">
+        <ion-card>
+          <h2 class="splash-h1">{{getDate(item.timestamp)}}</h2>
+          <div style="display: flex;flex-direction:row; justify-content:space-between;">
+            
+              <p style="font-style: bold;"> {{ map.get(item.moodName)[0]}}</p>
+            
+            <p>{{getTime(item.timestamp)}}</p>
+          </div>
+          <p>Emotions</p>
+          <div style="display:flex;" class="emotionCnt">
+            <p class="emotion" [ngStyle]="{'background-color':item.color}" *ngFor="let item1 of item.Pos">{{item1.name}}
+            </p>
+
+            <p class="emotion" [ngStyle]="{'background-color':item.color}" *ngFor="let item1 of item.Neg">{{item1.name}}
+            </p>
+          </div>
+        </ion-card>
+        </ion-col>
+        </ion-row>
+        </ion-grid>
+  </ion-content>

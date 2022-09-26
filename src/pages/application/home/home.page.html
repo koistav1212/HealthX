@@ -89,8 +89,8 @@
             </p>
         </div>
         <ion-slides [options]="slideOpts2">
-            <ion-slide *ngFor="let item of slidesData2;" (click)="blogView(item)">
-                <ion-card class="SuggestedCard" style="background:url({{item.image}})  center/cover;">
+            <ion-slide *ngFor="let item of slidesData2|async" (click)="blogView(item)">
+                <ion-card class="SuggestedCard" style="background:url({{item.imageurl}})  center/cover;">
 
                     <p class="ion-text-center">{{item.title}}</p>
 
@@ -105,8 +105,8 @@
             </p>
         </div>
         <ion-slides [options]="slideOpts3">
-            <ion-slide *ngFor="let item of slidesData2;">
-                <ion-card class="knowCard" style="background:url({{item.image}})  center/cover;" (click)="blogView(item)">
+            <ion-slide *ngFor="let item of slidesData2|async">
+                <ion-card class="knowCard" style="background:url({{item.imageurl}})  center/cover;" (click)="blogView(item)">
 
                     <p class="ion-text-center">{{item.title}}</p>
 

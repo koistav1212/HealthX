@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { VgApiService } from '@videogular/ngx-videogular/core';
 @Component({
   selector: 'app-videoplayer',
@@ -8,9 +9,11 @@ import { VgApiService } from '@videogular/ngx-videogular/core';
 export class VideoplayerPage implements OnInit {
   preload: string = 'auto';
   api: VgApiService;
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private router:Router) { }
+  vdoSrc={}
+  ngOnInit( ) {
+    
+    this.vdoSrc = this.router.getCurrentNavigation()?.extras.state.item
   }
   onPlayerReady(api: VgApiService) {
     this.api = api;

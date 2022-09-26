@@ -1,4 +1,5 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
@@ -43,11 +44,15 @@ map = new Map<string, Array<string>>([
 ]);
 currenColor:string='';currMood:any;currLottie:any;disabled=true;
  @ViewChild('header')header:ElementRef;gender:any;
- @Input() mood:any; 
-  constructor(private router:Router,private modalCtrl: ModalController,private afs:AngularFirestore) { }
+ @Input() mood:any; user:any={}
+  constructor(private router:Router,private modalCtrl: ModalController,private afs:AngularFirestore,private afAuth:AngularFireAuth) { }
 
   ngOnInit() {
-    
+    this.afAuth.authState.subscribe((user:any)=>{
+      if(user)
+      this.user=user;
+        
+    })
     this.currenColor=this.map.get(this.mood)[1];
     this.currMood=this.map.get(this.mood)[0];
     console.log(this.mood)
@@ -71,7 +76,7 @@ currenColor:string='';currMood:any;currLottie:any;disabled=true;
       color:this.currenColor,
     }
    // console.log(res)
-    this.afs.collection('moodlog').add(res).then((res1:any)=>{
+    this.afs.collection('users').doc(this.user.uid).collection('moodlog').add(res).then((res1:any)=>{
       console.log(res1)
     })
     this.router.navigate(['menu/moodTracker'],{state:{item:res}})
