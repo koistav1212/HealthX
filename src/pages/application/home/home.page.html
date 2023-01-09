@@ -12,7 +12,7 @@
     </ion-toolbar>
     <div class="dates ion-text-center">
         <ion-icon name="chevron-back-circle-outline"></ion-icon>
-        <p> Mon ,June 2021 </p>
+        <p> {{date | date: 'dd/MM/YYYY'}} </p>
         <ion-icon name="chevron-forward-circle-outline"></ion-icon>
     </div>
     <ion-segment mode="ios" (ionChange)="segmentChanged($event)" value="journal">
@@ -39,7 +39,7 @@
                             <img src="../../../assets/images/moodtracker.png" />
                             <div style="display: flex;flex-direction: column;">
                                 <h2>MY MOOD TODAY</h2>
-                                <p>Friday ,18 June</p>
+                                <p>{{date | date: 'shortDate' }}</p>
                             </div>
                         </div>
                     </div>
@@ -89,7 +89,7 @@
             </p>
         </div>
         <ion-slides [options]="slideOpts2">
-            <ion-slide *ngFor="let item of slidesData2|async" (click)="blogView(item)">
+            <ion-slide *ngFor="let item of blogs|async" (click)="blogView(item)">
                 <ion-card class="SuggestedCard" style="background:url({{item.imageurl}})  center/cover;">
 
                     <p class="ion-text-center">{{item.title}}</p>
@@ -105,7 +105,7 @@
             </p>
         </div>
         <ion-slides [options]="slideOpts3">
-            <ion-slide *ngFor="let item of slidesData2|async">
+            <ion-slide *ngFor="let item of blogs|async">
                 <ion-card class="knowCard" style="background:url({{item.imageurl}})  center/cover;" (click)="blogView(item)">
 
                     <p class="ion-text-center">{{item.title}}</p>
@@ -121,9 +121,9 @@
             </p>
         </div>
         <ion-slides [options]="slideOpts4">
-            <ion-slide *ngFor="let item of slidesData3;" (click)="reviewView(item)">
+            <ion-slide *ngFor="let item of testimonials|async;" (click)="reviewView(item)">
                 <ion-card class="feedCard" style="background:white;">
-                    <img src={{item.image}} />
+                    <img src={{item.imageurl}} />
                     <div style="display: flex; flex-direction: row;">
                         <img class="comma1" src="../../../assets/images/openComma.png" />
                         <p class="ion-text-center">{{item.description}}

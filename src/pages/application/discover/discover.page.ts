@@ -3,6 +3,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { GestureController, IonContent, IonList, IonSlides, Platform } from "@ionic/angular";
 import { Observable } from 'rxjs';
+import { BackPressFunc } from 'src/components/flip-card/backFunction/backpress';
 enum SheetState{
   Bottom=0,
  Docked=1,
@@ -36,11 +37,8 @@ height:any;
 
 constructor( public platform:Platform, public router:Router,public afs:AngularFirestore,
   private plt:Platform,
-   private gestureCntrl:GestureController) {
- this.platform.backButton.subscribeWithPriority(10,()=>
-  {
-    this.router.navigateByUrl('menu/tabs/home')
-  })
+   private gestureCntrl:GestureController,private backpress:BackPressFunc) {
+    backpress.backButtonEvent(router);
   this.videosData=this.afs.collection('recommendedvideos').valueChanges(); 
  
     this.healthData=this.afs.collection('healthpacks').valueChanges(); 

@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { MoodDetailPage } from '../mood-detail/mood-detail.page';
+import { BackPressFunc } from 'src/components/flip-card/backFunction/backpress';
 
 @Component({
   selector: 'app-home',
@@ -22,16 +23,14 @@ export class HomePage implements OnInit {
   //photoUrl= firebase.auth().currentUser.photoURL;
   @ViewChild('featureImg',{read: ElementRef}) featuresImg:ElementRef; 
   @ViewChild('slides', { static: false }) slides: IonSlides;
-  featuresData:Observable<any[]>;slidesData2 :any= [];slidesData3 = [];currentSlide:any;
+  featuresData:Observable<any[]>;blogs :any= [];testimonials:any = [];currentSlide:any;
   featuresAnim:any[];  
   constructor(public actionsheetCtrl: ActionSheetController  ,public platform:Platform,private modalCtrl:ModalController
-     , public router:Router,private gestureCntrl:GestureController,public afs:AngularFirestore) { 
-      this.platform.backButton.subscribeWithPriority(-1,()=>
-     {
-      navigator['app'].exitApp();
-     })
+     , public router:Router,private gestureCntrl:GestureController,public afs:AngularFirestore, private backpress:BackPressFunc) { 
+   backpress.backButtonEvent(router);
      this.featuresData= this.afs.collection('images').doc('featureimages').collection('features').valueChanges();
  
+     console.log(this.router.url)
     }
     slideOpts2 = {
       slidesPerView: 1.5,
@@ -44,6 +43,7 @@ export class HomePage implements OnInit {
         slideShadows: true,
       }
     }
+    date:any;
     slideOpts3 = {
       slidesPerView: 2.5,
       freeMode: true,
@@ -145,6 +145,7 @@ export class HomePage implements OnInit {
       }
     }
    ngOnInit() {
+    this.date=new Date();
     this.getallData()
     this.featuresAnim=[
       {
@@ -170,41 +171,12 @@ export class HomePage implements OnInit {
       },
     ]
          
-      this.slidesData3 = [
-        {
-          title: 'Riana Roy',
-          designation:'Teacher',
-          image: "../../../assets/images/feed1.png",
-          description: 'The ionic conference app is a practical preview of the ionic framework in action, and a demonstration of proper code use.'
-        },
-        {
-          title: 'Arik Arya',
-          designation:'Data Scientist',
-          image: "../../../assets/images/online.png",
-          description: 'Ionic Framework is an open source SDK that enables developers to build high quality mobile apps with web technologies like HTML, CSS, and JavaScript.'
-        },
-        {
-          title: 'Sleep',
-          designation:'Data Scientist',
-          image:"../../../assets/images/vision2.png",
-          description: 'Ionic Appflow is a powerful set of services and features built on top of Ionic Framework that brings a totally new level of app development agility to mobile dev teams.'
-        },
-        {
-          title: 'Sleep',designation:'Data Scientist',
-          image:"../../../assets/images/vision3.png",
-          description: 'Ionic Appflow is a powerful set of services and features built on top of Ionic Framework that brings a totally new level of app development agility to mobile dev teams.'
-        },
-        {
-          title: 'Vision Board',designation:'Data Scientist',
-          image:"../../../assets/images/vision3.png",
-          description: 'Ionic Appflow is a powerful set of services and features built on top of Ionic Framework that brings a totally new level of app development agility to mobile dev teams.'
-        }
-      ];
-     
+      
     }
     getallData()
     {
-      this.slidesData2=this.afs.collection('blogs').valueChanges();
+      this.blogs=this.afs.collection('blogs').valueChanges();
+this.testimonials=this.afs.collection('testimonial').valueChanges();
     }
     async slideChanged(slides: IonSlides) {
   

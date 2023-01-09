@@ -2,7 +2,9 @@ import { DatePipe } from '@angular/common';
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { BackPressFunc } from 'src/components/flip-card/backFunction/backpress';
 
 @Component({
   selector: 'app-moodtracker',
@@ -11,7 +13,10 @@ import { AlertController } from '@ionic/angular';
 })
 export class MoodtrackerPage implements OnInit {
 arr:any=[];currenColor:any;currMood:any;user:any={};
-  constructor(private alertCntrl:AlertController,private datePipe: DatePipe,private afs:AngularFirestore,private afAuth:AngularFireAuth) { }
+  constructor(private alertCntrl:AlertController,private datePipe: DatePipe,private afs:AngularFirestore,private afAuth:AngularFireAuth,private router:Router,private backpress:BackPressFunc) { 
+    backpress.backButtonEvent(router);
+  }
+
   map = new Map<string, Array<string>>([
     ["energetic", ["Energetic", "#03fc3d","../../../assets/images/happy-boy.json"]],
     ["happy", ["Happy","#6ffc03","../../../assets/images/swinging-happy.json"]]	,

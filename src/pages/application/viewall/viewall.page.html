@@ -5,8 +5,8 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title class="header-title"></ion-title>
-   
+    
+  <ion-title style="margin: 0;" class="features-title">{{category.category}}</ion-title>
   </ion-toolbar>
 
 </ion-header>
@@ -16,8 +16,7 @@
    style="margin: 0; overflow: hidden !important; width: 100%; background:url(../../../assets/images/featuresBG2.svg) top/cover;">
     <div class="drawer"></div>
   </div>
-  <ion-title class="features-title" style="margin-top: 20px;">{{category.category}}</ion-title>
-  <ion-grid class="home-gallery">
+   <ion-grid class="home-gallery">
     <ion-row>
       <ion-col size="6" *ngFor="let item of currentData | async;let i=index;" (click)="routing(item)">
         <ion-card class="products_list" style="border-radius: 20px; --background: white;" >

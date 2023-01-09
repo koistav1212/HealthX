@@ -92,26 +92,11 @@ const routes: Routes = [
     loadChildren: () => import('../pages/application/allfeatures/feature-details/feature-details.module').then( m => m.FeatureDetailsPageModule)
   },
 
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
-  ],
+    RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
