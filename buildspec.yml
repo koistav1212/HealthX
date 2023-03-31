@@ -7,9 +7,6 @@ phases:
   build:
     commands:
       - ionic build
-  run:
-    commands:
-      - ionic serve
 artifacts:
   files:
     - '**/*'
