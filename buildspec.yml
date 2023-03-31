@@ -3,10 +3,13 @@ version: 0.2
 phases:
   install:
     commands:
-      - npm install
+      - npm install -g @ionic/cli
   build:
     commands:
-      - npm test
+      - ionic build
+  run:
+    commands:
+      - ionic serve
 artifacts:
   files:
     - '**/*'
